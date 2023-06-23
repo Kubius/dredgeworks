@@ -234,12 +234,12 @@ wire_buoy.connection_points = {
   }
 
   for _,v in pairs(wire_buoy.connection_points) do
-    v.shadow.copper[1] = v.wire.copper[1] + 0.3 + (v.wire.copper[2] * -0.7)
-    v.shadow.copper[2] = v.wire.copper[2] + 1.4
-    v.shadow.green[1] = v.wire.green[1] + 0.3 + (v.wire.green[2] * -0.7)
-    v.shadow.green[2] = v.wire.green[2] + 1.4
-    v.shadow.red[1] = v.wire.red[1] + 0.3 + (v.wire.red[2] * -0.7)
-    v.shadow.red[2] = v.wire.red[2] + 1.4
+    v.shadow.copper[1] = v.wire.copper[1] + 1.18
+    v.shadow.copper[2] = v.wire.copper[2] + 1.36
+    v.shadow.green[1] = v.wire.green[1] + 1.18
+    v.shadow.green[2] = v.wire.green[2] + 1.36
+    v.shadow.red[1] = v.wire.red[1] + 1.18
+    v.shadow.red[2] = v.wire.red[2] + 1.36
   end
 
 ---
