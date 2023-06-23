@@ -49,7 +49,7 @@ data:extend ({
   {
     type = "technology",
     name = "floating-logistics-technology",
-    icon = DREDGEPATH .. "technology/beltplaceholder.png",
+    icon = DREDGEPATH .. "technology/aquatic-logistics.png",
     icon_size = 256,
     effects = unlockFlotation(),
     prerequisites = {"logistics","plastics"},

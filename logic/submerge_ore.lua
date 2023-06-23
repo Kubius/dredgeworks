@@ -18,7 +18,7 @@ function submergeOre(e)
                     if (surface.count_tiles_filtered{position=oldpos, radius=checkrad, collision_mask="ground-tile"} == 0 ) then
                         surface.create_entity{name=try_deep, amount=oldamt, position=oldpos}
                     end
-                elseif((deposit.name ~= "deep-oil") and (deposit.name ~= "crude-oil")) then
+                elseif(not deposit.prototype.mineable_properties or deposit.prototype.mineable_properties.products[1].type ~= "fluid") then
                     deposit.destroy()
                 end
             end

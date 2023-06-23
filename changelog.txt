@@ -1,0 +1,13 @@
+---------------------------------------------------------------------------------------------------
+Version: 0.1.1
+
+  Changes:
+    - Fixed interaction when both Alien Biomes and Cargo Ships are installed, by allowing ocean spawn of all fluid-yielding resources.
+    - Updated art for the Aquatic Logistics technology
+    - Reduced seafloor drill flotation platform cost from 12 to 4
+
+---------------------------------------------------------------------------------------------------
+Version: 0.1.0
+
+  Changes:
+    - Initial release

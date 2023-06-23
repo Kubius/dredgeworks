@@ -49,7 +49,7 @@ data:extend{
     enabled = false,
     energy_required = 4,
     ingredients = {
-      {"flotation-platform", 12},
+      {"flotation-platform", 4},
       {"electric-mining-drill", 1}
     },
     result = "seafloor-drill",
