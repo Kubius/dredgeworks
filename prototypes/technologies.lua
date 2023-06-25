@@ -13,6 +13,10 @@ local function unlockFlotation(recipe)
       },
       {
         type = "unlock-recipe",
+        recipe = "flotation-platform-wood"
+      },
+      {
+        type = "unlock-recipe",
         recipe = "floating-belt"
       }
     }
@@ -35,9 +39,9 @@ data:extend ({
     effects = {
       unlock("wire-buoy"),
     },
-    prerequisites = {"electric-energy-distribution-1"},
+    prerequisites = {"electronics", "steel-processing", "logistic-science-pack"},
     unit = {
-      count = 60,
+      count = 100,
       ingredients = {
         {"automation-science-pack", 1},
         {"logistic-science-pack", 1},
@@ -52,14 +56,14 @@ data:extend ({
     icon = DREDGEPATH .. "technology/aquatic-logistics.png",
     icon_size = 256,
     effects = unlockFlotation(),
-    prerequisites = {"logistics","plastics"},
+    prerequisites = {"logistic-science-pack"},
     unit = {
       count = 100,
       ingredients = {
         {"automation-science-pack", 1},
         {"logistic-science-pack", 1},
       },
-      time = 30
+      time = 20
     },
     order = "a-f-aa",
   },
@@ -73,7 +77,7 @@ data:extend ({
     },
     prerequisites = {"floating-logistics-technology"},
     unit = {
-      count = 100,
+      count = 50,
       ingredients = {
         {"automation-science-pack", 1},
         {"logistic-science-pack", 1},

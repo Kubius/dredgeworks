@@ -37,11 +37,27 @@ data:extend{
     energy_required = 1,
     ingredients = {
       {"plastic-bar", 1},
+      {"iron-stick", 2},
+      {"iron-plate", 2}
+    },
+    result = "flotation-platform",
+    result_count = 2
+  },
+  {
+    type = "recipe",
+    name = "flotation-platform-wood",
+    icon = DREDGEPATH .. "icons/flotation-platform-wood.png",
+    icon_size = 64,
+    enabled = false,
+    energy_required = 0.8,
+    allow_decomposition = false,
+    ingredients = {
+      {"wood", 2},
       {"iron-stick", 1},
       {"iron-plate", 1}
     },
     result = "flotation-platform",
-    result_count = 2
+    result_count = 1
   },
   {
     type = "recipe",

@@ -1,4 +1,13 @@
 ---------------------------------------------------------------------------------------------------
+Version: 0.2.0
+
+  Changes:
+    - Overhauled ore submersion to use procedural techniques; non-vanilla ores should now be submergeable, though visual parity isn't guaranteed
+    - Adjusted technology progression; Wire Buoys are now available in a similar manner to electric distribution 1, and Aquatic Logistics only needs logistic science
+    - Flotation platforms are now a bit more expensive, requiring 1 iron stick and 1 iron plate per platform (instead of per recipe)
+    - Added a wood-based flotation platform recipe for early game or greenhouse mods. Slower per platform, each platform consumes 2 wood instead of 0.5 plastic
+
+---------------------------------------------------------------------------------------------------
 Version: 0.1.1
 
   Changes:
