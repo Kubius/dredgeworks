@@ -14,5 +14,12 @@ data:extend{
         minimum_value = 0,
         maximum_value = 10,
         order = "c-b"
+    },
+    {
+        type = "bool-setting",
+        name = "allow_floating_edgecase",
+        setting_type = "startup",
+        default_value = false,
+        order = "c-c"
     }
 }

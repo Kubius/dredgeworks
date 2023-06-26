@@ -1,20 +1,15 @@
 require("util")
 require("__dredgeworks__/logic/submerge_ore")
 
-local function init()
+script.on_init(function()
     init_events()
-end
+    end)
 
 function init_events()
+    log("dredgeworks: preparing ore submersion")
     script.on_event(defines.events.on_chunk_generated, submergeOre)
 end
 
 script.on_load(function()
-    log("dredgeworks on_load")
     init_events()
-    end)
-    
-script.on_init(function()
-    log("dredgeworks on_init")
-    init()
     end)
