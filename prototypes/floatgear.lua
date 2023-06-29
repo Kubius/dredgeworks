@@ -293,7 +293,9 @@ for _, prototype in pairs(data.raw["inserter"]) do
   floating_inserter.localised_name = {"dredgeworks.floated", prototype.localised_name or ({"entity-name." .. prototype.name})}
   floating_inserter.minable = {mining_time = 0.1, result = "floating-" .. prototype.name}
   floating_inserter.collision_mask = {'ground-tile','object-layer'}
-  floating_inserter.fast_replaceable_group = "floating-" .. prototype.fast_replaceable_group
+  if(prototype.fast_replaceable_group) then
+    floating_inserter.fast_replaceable_group = "floating-" .. prototype.fast_replaceable_group
+  end
   floating_inserter.next_upgrade = nil
   floating_inserter.platform_picture = {
     sheets = {

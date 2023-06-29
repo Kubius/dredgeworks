@@ -1,4 +1,10 @@
 ---------------------------------------------------------------------------------------------------
+Version: 0.2.2
+
+  Changes:
+    - Floating inserters now skip assigning a fast replaceable group if the original inserter lacks one. Mod compatibility fix (update unnecessary if you're not affected)
+
+---------------------------------------------------------------------------------------------------
 Version: 0.2.1
 
   Changes:
