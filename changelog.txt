@@ -1,4 +1,12 @@
 ---------------------------------------------------------------------------------------------------
+Version: 0.2.3
+
+  Changes:
+    - Significantly altered floating inserter generation with special support for Bob's inserter overhaul; if issues persist, please continue to report
+    - Reduced flotation platform crafting time to 0.8 seconds and 0.5 seconds for plastic and wood recipes respectively (the former remains faster per platform)
+    - Reduced seafloor drill crafting time from 4 seconds to 1
+
+---------------------------------------------------------------------------------------------------
 Version: 0.2.2
 
   Changes:

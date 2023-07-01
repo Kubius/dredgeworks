@@ -21,11 +21,13 @@ local function unlockFlotation(recipe)
       }
     }
     for _, insertername in pairs(floating_inserter_index) do
-      table.insert(stuff2unlock, {
-          type = "unlock-recipe",
-          recipe = insertername[1]
-        }
-      )
+      if(not (mods["boblogistics"] and settings.startup["bobmods-logistics-inserteroverhaul"].value == true and insertername[1] == "floating-long-handed-inserter")) then
+        table.insert(stuff2unlock, {
+            type = "unlock-recipe",
+            recipe = insertername[1]
+          }
+        )
+      end
     end
     return stuff2unlock
   end

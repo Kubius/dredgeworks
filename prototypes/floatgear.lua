@@ -285,49 +285,4 @@ floating_belt.next_upgrade = nil
 floating_belt.belt_animation_set = floating_belt_animation_set
 floating_belt.max_health = 150
 
-local to_add = {}
-
-for _, prototype in pairs(data.raw["inserter"]) do
-  local floating_inserter = table.deepcopy(prototype)
-  floating_inserter.name = "floating-" .. prototype.name
-  floating_inserter.localised_name = {"dredgeworks.floated", prototype.localised_name or ({"entity-name." .. prototype.name})}
-  floating_inserter.minable = {mining_time = 0.1, result = "floating-" .. prototype.name}
-  floating_inserter.collision_mask = {'ground-tile','object-layer'}
-  if(prototype.fast_replaceable_group) then
-    floating_inserter.fast_replaceable_group = "floating-" .. prototype.fast_replaceable_group
-  end
-  floating_inserter.next_upgrade = nil
-  floating_inserter.platform_picture = {
-    sheets = {
-      {
-        filename = DREDGEPATH .. "entity/flotation-platform.png",
-        priority = "extra-high",
-        width = 32,
-        height = 32,
-        shift = {0, 0.1},
-        hr_version =
-        {
-          filename = DREDGEPATH .. "entity/hr-flotation-platform.png",
-          priority = "extra-high",
-          width = 64,
-          height = 64,
-          shift = {0, 0.1},
-          scale = 0.5
-        }
-      },
-      floating_inserter.platform_picture.sheet
-    }
-  }
-  
-  table.insert(floating_inserter_index,
-    {
-      floating_inserter.name,
-      floating_inserter.localised_name,
-      prototype.name
-    }
-  )
-  table.insert(to_add,floating_inserter)
-end
-
-data:extend(to_add)
 data:extend({wire_buoy,seafloor_drill,floating_belt})
