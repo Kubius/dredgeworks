@@ -1,4 +1,11 @@
 ---------------------------------------------------------------------------------------------------
+Version: 0.2.4
+
+  Changes:
+    - Inserters without a "minable" value set will no longer be indexed for floating inserter generation (attempt to cover some edge cases; if an inserter isn't floatable and it should be, chime in)
+    - Moved inserter flotation to a distinct file for better readability
+
+---------------------------------------------------------------------------------------------------
 Version: 0.2.3
 
   Changes:
