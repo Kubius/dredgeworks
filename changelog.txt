@@ -1,4 +1,10 @@
 ---------------------------------------------------------------------------------------------------
+Version: 0.2.5
+
+  Changes:
+    - Inserters set not to draw their held item will no longer be indexed for floating inserter generation, notably allowing compatibility with miniloaders
+
+---------------------------------------------------------------------------------------------------
 Version: 0.2.4
 
   Changes:

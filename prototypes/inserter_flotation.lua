@@ -1,7 +1,7 @@
 local to_add = {}
 
 for _, prototype in pairs(data.raw["inserter"]) do
-  if (prototype.minable) then
+  if (prototype.minable and prototype.draw_held_item ~= false) then
     local floating_inserter = table.deepcopy(prototype)
     floating_inserter.name = "floating-" .. prototype.name
     floating_inserter.localised_name = {"dredgeworks.floated", prototype.localised_name or ({"entity-name." .. prototype.name})}
