@@ -1,4 +1,10 @@
 ---------------------------------------------------------------------------------------------------
+Version: 0.2.6
+
+  Changes:
+    - Inserters with a width 1 ("empty") hand base picture will no longer be indexed for floating inserter generation; allows compatibility with Arrow Inserter
+
+---------------------------------------------------------------------------------------------------
 Version: 0.2.5
 
   Changes:
