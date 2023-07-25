@@ -12,6 +12,17 @@ data:extend{
     },
     {
         type = "item",
+        name = "light-buoy",
+        icon = DREDGEPATH .. "icons/lightbuoy.png",
+        icon_size = 64,
+        flags = {},
+        subgroup = "circuit-network",
+        order = "a[light]-b[light-buoy]",
+        place_result = "light-buoy",
+        stack_size = 50
+    },
+    {
+        type = "item",
         name = "seafloor-drill",
         icon = DREDGEPATH .. "icons/seafloor-drill.png",
         icon_size = 64,

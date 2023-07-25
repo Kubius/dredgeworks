@@ -244,6 +244,103 @@ wire_buoy.connection_points = {
 
 ---
 
+-- light buoy: get glowy
+
+local light_buoy = table.deepcopy(data.raw["lamp"]["small-lamp"])
+light_buoy.name = "light-buoy"
+light_buoy.icon = DREDGEPATH .. "icons/lightbuoy.png"
+light_buoy.icon_size = 64
+light_buoy.icon_mipmaps = 0
+light_buoy.minable = {mining_time = 0.1, result = "light-buoy"}
+light_buoy.collision_mask = {'ground-tile','object-layer'}
+light_buoy.corpse = nil
+light_buoy.light = {intensity = 0.8, size = 30, color = {r=1.0, g=0.9, b=0.7}}
+light_buoy.picture_off = {
+    layers = {
+      {
+        filename = DREDGEPATH .. "entity/light_buoy/light-buoy.png",
+        priority = "high",
+        width = 56,
+        height = 52,
+        frame_count = 1,
+        direction_count = 1,
+        shift = util.by_pixel(11,-2),
+        hr_version =
+        {
+          filename = DREDGEPATH .. "entity/light_buoy/hr-light-buoy.png",
+          priority = "high",
+          width = 112,
+          height = 104,
+          frame_count = 1,
+          direction_count = 1,
+          shift = util.by_pixel(11,-2),
+          scale = 0.5
+        }
+      },
+      {
+        filename = DREDGEPATH .. "entity/light_buoy/light-buoy-shadow.png",
+        priority = "high",
+        width = 56,
+        height = 52,
+        frame_count = 1,
+        direction_count = 1,
+        shift = util.by_pixel(11,-2),
+        draw_as_shadow = true,
+        hr_version =
+        {
+          filename = DREDGEPATH .. "entity/light_buoy/hr-light-buoy-shadow.png",
+          priority = "high",
+          width = 112,
+          height = 104,
+          frame_count = 1,
+          direction_count = 1,
+          shift = util.by_pixel(11,-2),
+          draw_as_shadow = true,
+          scale = 0.5
+        }
+      }
+    }
+  }
+light_buoy.picture_on = {
+    filename = DREDGEPATH .. "entity/light_buoy/light-buoy-glow.png",
+    priority = "high",
+    width = 85,
+    height = 85,
+    frame_count = 1,
+    direction_count = 1,
+    shift = util.by_pixel(0, -12),
+    tint = {r = 1, g = 0.9, b = 0.8, a = 0.8},
+    hr_version =
+    {
+      filename = DREDGEPATH .. "entity/light_buoy/hr-light-buoy-glow.png",
+      priority = "high",
+      width = 170,
+      height = 170,
+      frame_count = 1,
+      direction_count = 1,
+      shift = util.by_pixel(0, -12),
+      tint = {r = 1, g = 0.9, b = 0.8, a = 0.8},
+      scale = 0.5
+    }
+  }
+light_buoy.water_reflection = {
+    pictures = {
+      {
+        filename = DREDGEPATH .. "entity/light_buoy/light-buoy-reflection.png",
+        width = 28,
+        height = 26,
+        shift = util.by_pixel(11, 20),
+        scale = 2
+      }
+    }
+  }
+--todo eventually maybe
+--circuit_wire_connection_point = circuit_connector_definitions["lamp"].points,
+--circuit_connector_sprites = circuit_connector_definitions["lamp"].sprites,
+--circuit_wire_max_distance = default_circuit_wire_max_distance
+
+---
+
 local seafloor_drill = table.deepcopy(data.raw["mining-drill"]["electric-mining-drill"])
 seafloor_drill.name = "seafloor-drill"
 seafloor_drill.minable = {mining_time = 0.5, result = "seafloor-drill"}
@@ -285,4 +382,4 @@ floating_belt.next_upgrade = nil
 floating_belt.belt_animation_set = floating_belt_animation_set
 floating_belt.max_health = 150
 
-data:extend({wire_buoy,seafloor_drill,floating_belt})
+data:extend({wire_buoy,light_buoy,seafloor_drill,floating_belt})

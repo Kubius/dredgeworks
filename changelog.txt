@@ -1,4 +1,11 @@
 ---------------------------------------------------------------------------------------------------
+Version: 0.3.0
+
+  Changes:
+    - Added the light buoy, crafted with a lamp and some pipes. It's a lamp, but floating.
+    - Updated ore submersion to submerge ore when water collision mask is detected, not when ground mask isn't (fixes weird interaction with Space Exploration).
+
+---------------------------------------------------------------------------------------------------
 Version: 0.2.6
 
   Changes:

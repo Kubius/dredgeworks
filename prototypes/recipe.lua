@@ -68,6 +68,18 @@ data:extend{
   },
   {
     type = "recipe",
+    name = "light-buoy",
+    enabled = true,
+    energy_required = 0.5,
+    ingredients = {
+      {"small-lamp", 1},
+      {"pipe", 2}
+    },
+    result = "light-buoy",
+    result_count = 1
+  },
+  {
+    type = "recipe",
     name = "flotation-platform",
     enabled = false,
     energy_required = 0.8,
