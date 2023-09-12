@@ -254,6 +254,7 @@ light_buoy.icon_mipmaps = 0
 light_buoy.minable = {mining_time = 0.1, result = "light-buoy"}
 light_buoy.collision_mask = {'ground-tile','object-layer'}
 light_buoy.corpse = nil
+light_buoy.next_upgrade = nil
 light_buoy.light = {intensity = 0.8, size = 30, color = {r=1.0, g=0.9, b=0.7}}
 light_buoy.picture_off = {
     layers = {
