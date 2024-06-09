@@ -21,5 +21,12 @@ data:extend{
         setting_type = "startup",
         default_value = false,
         order = "c-c"
-    }
+    },
+    {
+        type = "bool-setting",
+        name = "no_inserter_flotation",
+        setting_type = "startup",
+        default_value = false,
+        order = "c-d"
+    },
 }
