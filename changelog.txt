@@ -2,7 +2,7 @@
 Version: 0.4.0
 
   Changes:
-    - Updated target version to 2.0.
+    - Updated code for 2.0 compatibility. Has been tested briefly in core game; should not break with Space Age, but may interact oddly with it.
     - Water Ores is now an optional dependency, with Dredgeworks removing the ore elimination layer itself if Water Ores isn't present (optionality remains for mod compatibility).
 
 ---------------------------------------------------------------------------------------------------
