@@ -6,7 +6,7 @@ wire_buoy.icon = DREDGEPATH .. "icons/wirebuoy.png"
 wire_buoy.icon_size = 64
 wire_buoy.icon_mipmaps = 0
 wire_buoy.minable = {mining_time = 0.3, result = "wire-buoy"}
-wire_buoy.collision_mask = {'ground-tile','object-layer'}
+wire_buoy.collision_mask = {layers = {ground_tile = true,object = true}}
 wire_buoy.maximum_wire_distance = 10
 wire_buoy.supply_area_distance = 4
 wire_buoy.fast_replaceable_group = nil
@@ -252,7 +252,7 @@ light_buoy.icon = DREDGEPATH .. "icons/lightbuoy.png"
 light_buoy.icon_size = 64
 light_buoy.icon_mipmaps = 0
 light_buoy.minable = {mining_time = 0.1, result = "light-buoy"}
-light_buoy.collision_mask = {'ground-tile','object-layer'}
+light_buoy.collision_mask = {layers = {ground_tile = true,object = true}}
 light_buoy.corpse = nil
 light_buoy.next_upgrade = nil
 light_buoy.light = {intensity = 0.8, size = 30, color = {r=1.0, g=0.9, b=0.7}}
@@ -345,7 +345,7 @@ light_buoy.water_reflection = {
 local seafloor_drill = table.deepcopy(data.raw["mining-drill"]["electric-mining-drill"])
 seafloor_drill.name = "seafloor-drill"
 seafloor_drill.minable = {mining_time = 0.5, result = "seafloor-drill"}
-seafloor_drill.collision_mask = {'ground-tile','object-layer'}
+seafloor_drill.collision_mask = {layers = {ground_tile = true,object = true}}
 seafloor_drill.fast_replaceable_group = nil
 seafloor_drill.next_upgrade = nil
 
@@ -377,7 +377,7 @@ local floating_belt_animation_set =
 local floating_belt = table.deepcopy(data.raw["transport-belt"]["transport-belt"])
 floating_belt.name = "floating-belt"
 floating_belt.minable = {mining_time = 0.1, result = "floating-belt"}
-floating_belt.collision_mask = {'ground-tile','object-layer','transport-belt-layer'}
+floating_belt.collision_mask = {layers = {ground_tile = true,object = true,transport_belt = true}}
 floating_belt.fast_replaceable_group = "floating-transport-belt"
 floating_belt.next_upgrade = nil
 floating_belt.belt_animation_set = floating_belt_animation_set

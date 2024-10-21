@@ -13,7 +13,7 @@ for _, prototype in pairs(data.raw.resource) do
     deep_ore.localised_description = {"dredgeworks.submerged-desc"}
     deep_ore.autoplace = nil
     deep_ore.protected_from_tile_building = false
-    deep_ore.collision_mask = {'ground-tile','resource-layer','colliding-with-tiles-only'}
+    deep_ore.collision_mask = {layers = {ground_tile = true,resource = true}, colliding_with_tiles_only = true}
     deep_ore.water_reflection = nil
 
     for _, adjusticon in pairs(deep_ore.stages) do

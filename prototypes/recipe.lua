@@ -10,11 +10,10 @@ if (settings.startup["no_inserter_flotation"].value == false) then
             enabled = false,
             energy_required = 0.5,
             ingredients = {
-              {"long-handed-inserter", 1},
-              {"flotation-platform", 1}
+              {type = "item", name = "long-handed-inserter", amount = 1},
+              {type = "item", name = "flotation-platform", amount = 1}
             },
-            result = inserter_entry[1],
-            result_count = 1
+            results = {{type = "item", name = inserter_entry[1], amount = 1}}
           }
         }
       elseif(inserter_entry[1] ~= "floating-long-handed-inserter") then
@@ -26,11 +25,10 @@ if (settings.startup["no_inserter_flotation"].value == false) then
             enabled = false,
             energy_required = 0.5,
             ingredients = {
-              {inserter_entry[3], 1},
-              {"flotation-platform", 1}
+              {type = "item", name = inserter_entry[3], amount = 1},
+              {type = "item", name = "flotation-platform", amount = 1}
             },
-            result = inserter_entry[1],
-            result_count = 1
+            results = {{type = "item", name = inserter_entry[1], amount = 1}}
           }
         }
       end
@@ -43,11 +41,10 @@ if (settings.startup["no_inserter_flotation"].value == false) then
           enabled = false,
           energy_required = 0.5,
           ingredients = {
-            {inserter_entry[3], 1},
-            {"flotation-platform", 1}
+            {type = "item", name = inserter_entry[3], amount = 1},
+            {type = "item", name = "flotation-platform", amount = 1}
           },
-          result = inserter_entry[1],
-          result_count = 1
+          results = {{type = "item", name = inserter_entry[1], amount = 1}}
         }
       }
     end
@@ -61,12 +58,11 @@ data:extend{
     enabled = false,
     energy_required = 1,
     ingredients = {
-      {"copper-cable", 6},
-      {"pipe", 2},
-      {"steel-plate", 3}
+      {type = "item", name = "copper-cable", amount = 6},
+      {type = "item", name = "pipe", amount = 2},
+      {type = "item", name = "steel-plate", amount = 3}
     },
-    result = "wire-buoy",
-    result_count = 1
+    results = {{type = "item", name = "wire-buoy", amount = 1}}
   },
   {
     type = "recipe",
@@ -74,11 +70,10 @@ data:extend{
     enabled = true,
     energy_required = 0.5,
     ingredients = {
-      {"small-lamp", 1},
-      {"pipe", 2}
+      {type = "item", name = "small-lamp", amount = 1},
+      {type = "item", name = "pipe", amount = 2}
     },
-    result = "light-buoy",
-    result_count = 1
+    results = {{type = "item", name = "light-buoy", amount = 1}}
   },
   {
     type = "recipe",
@@ -86,12 +81,11 @@ data:extend{
     enabled = false,
     energy_required = 0.8,
     ingredients = {
-      {"plastic-bar", 1},
-      {"iron-stick", 2},
-      {"iron-plate", 2}
+      {type = "item", name = "plastic-bar", amount = 1},
+      {type = "item", name = "iron-stick", amount = 2},
+      {type = "item", name = "iron-plate", amount = 2}
     },
-    result = "flotation-platform",
-    result_count = 2
+    results = {{type = "item", name = "flotation-platform", amount = 2}}
   },
   {
     type = "recipe",
@@ -102,12 +96,11 @@ data:extend{
     energy_required = 0.5,
     allow_decomposition = false,
     ingredients = {
-      {"wood", 2},
-      {"iron-stick", 1},
-      {"iron-plate", 1}
+      {type = "item", name = "wood", amount = 2},
+      {type = "item", name = "iron-stick", amount = 1},
+      {type = "item", name = "iron-plate", amount = 1}
     },
-    result = "flotation-platform",
-    result_count = 1
+    results = {{type = "item", name = "flotation-platform", amount = 1}}
   },
   {
     type = "recipe",
@@ -115,11 +108,10 @@ data:extend{
     enabled = false,
     energy_required = 1,
     ingredients = {
-      {"flotation-platform", 4},
-      {"electric-mining-drill", 1}
+      {type = "item", name = "flotation-platform", amount = 4},
+      {type = "item", name = "electric-mining-drill", amount = 1}
     },
-    result = "seafloor-drill",
-    result_count = 1
+    results = {{type = "item", name = "seafloor-drill", amount = 1}}
   },
   {
     type = "recipe",
@@ -127,10 +119,9 @@ data:extend{
     enabled = false,
     energy_required = 0.5,
     ingredients = {
-      {"flotation-platform", 1},
-      {"transport-belt", 2}
+      {type = "item", name = "flotation-platform", amount = 1},
+      {type = "item", name = "transport-belt", amount = 2}
     },
-    result = "floating-belt",
-    result_count = 2
+    results = {{type = "item", name = "floating-belt", amount = 1}}
   },
 }
