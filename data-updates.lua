@@ -4,7 +4,6 @@ local collision_mask_util = require("collision-mask-util")
 data:extend({{type = "collision-layer", name = "refined_concrete"}})
 
 for _, tile in pairs(data.raw.tile) do
-    tile.check_collision_with_entities = true -- necessary to prohibit replacing refined concrete with other materials to "stretch" it infinitely
     if tile.name == "refined-concrete" or tile.name == "refined-hazard-concrete-left" or tile.name == "refined-hazard-concrete-right" then
         tile.collision_mask.layers["refined_concrete"] = true
     end
