@@ -1,4 +1,11 @@
 ---------------------------------------------------------------------------------------------------
+Version: 0.5.0
+
+  Changes:
+    - Added a special collision layer procedure for Cargo Ships compatibility, allowing correct generation of its offshore oil.
+    - Water Ores is now incompatible as a consequence of the above (Dredgeworks now always handles this internally).
+
+---------------------------------------------------------------------------------------------------
 Version: 0.4.3
 
   Changes:

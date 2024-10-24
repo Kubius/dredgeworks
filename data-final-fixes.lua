@@ -37,8 +37,22 @@ data.raw.item["refined-hazard-concrete"].place_as_tile = {
     invert = true
 }
 
--- If the resource prevention hasn't been removed by Water Ores, do it ourselves
-if not mods["Water_Ores"] then
+-- Cargo Ships compatibility: remove land resource filter, add a special condition for crude oil
+if mods["cargo-ships"] then
+    data:extend({{type = "collision-layer", name = "block_shallow_crude"}})
+    local tiles = {"deepwater","deepwater-green","water","water-green","water-mud","water-shallow","landfill"}
+    for _,tile in pairs(tiles) do 
+        local thistile = data.raw["tile"][tile]
+        if thistile then
+            local mask = data.raw["tile"][tile].collision_mask.layers
+            if mask["land_resource"] then
+                mask["land_resource"] = nil
+                mask["block_shallow_crude"] = true
+            end
+        end
+    end
+    data.raw.resource["crude-oil"].collision_mask.layers["block_shallow_crude"] = true
+else
     local tiles = {"deepwater","deepwater-green","water","water-green","water-mud","water-shallow","landfill"}
     for _,tile in pairs(tiles) do 
         local thistile = data.raw["tile"][tile]
