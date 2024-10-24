@@ -1,4 +1,10 @@
 ---------------------------------------------------------------------------------------------------
+Version: 0.4.3
+
+  Changes:
+    - Reworked refined concrete placement logic more extensively to behave well with Space Age (and other expansions to available tiles).
+
+---------------------------------------------------------------------------------------------------
 Version: 0.4.2
 
   Changes:
