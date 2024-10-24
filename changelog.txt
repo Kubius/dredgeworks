@@ -1,4 +1,11 @@
 ---------------------------------------------------------------------------------------------------
+Version: 0.4.2
+
+  Changes:
+    - Fixed non-concrete tile placement, again. Hopefully sticks this time.
+    - No longer modify refined concrete yield by default as it's now a component of elevated rails. Yield can still be reduced for challenge, if desired.
+
+---------------------------------------------------------------------------------------------------
 Version: 0.4.1
 
   Changes:

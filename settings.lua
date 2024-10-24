@@ -10,7 +10,7 @@ data:extend{
         type = "int-setting",
         name = "nerf_concrete",
         setting_type = "startup",
-        default_value = 4,
+        default_value = 0,
         minimum_value = 0,
         maximum_value = 10,
         order = "c-b"
