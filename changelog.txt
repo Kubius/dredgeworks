@@ -1,4 +1,10 @@
 ---------------------------------------------------------------------------------------------------
+Version: 0.5.1
+
+  Changes:
+    - Fixed an oversight where out-of-map tiles were detected as valid placement targets for refined concrete.
+
+---------------------------------------------------------------------------------------------------
 Version: 0.5.0
 
   Changes:
