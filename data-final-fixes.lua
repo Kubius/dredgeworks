@@ -12,7 +12,7 @@ local valid_concrete_targets = {
 
 for _,tile in pairs(data.raw.tile) do 
     local mask = tile.collision_mask.layers
-    if mask["ground_tile"] && tile.name ~= "out-of-map" then
+    if mask["ground_tile"] and not mask["object"] then
         mask["ref_concrete_valid"] = true
     else
         for _,concrete_target in pairs(valid_concrete_targets) do

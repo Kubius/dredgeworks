@@ -1,4 +1,10 @@
 ---------------------------------------------------------------------------------------------------
+Version: 0.5.2
+
+  Changes:
+    - Further improved valid placement target detection for refined concrete; it's now inhibited by a tile having object layer collision.
+
+---------------------------------------------------------------------------------------------------
 Version: 0.5.1
 
   Changes:
