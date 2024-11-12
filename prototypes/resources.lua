@@ -6,7 +6,7 @@ for _, prototype in pairs(data.raw.resource) do
   if(prototype.category == nil or prototype.category == "basic-solid") then
     local deep_ore = table.deepcopy(prototype)
 
-    log("dredgeworks: submerging ".. prototype.name)
+    log("dredgeworks: creating submerged ".. prototype.name)
 
     deep_ore.name = "deep-" .. prototype.name
     deep_ore.localised_name = {"dredgeworks.submerged", prototype.localised_name or ({"entity-name." .. prototype.name})}

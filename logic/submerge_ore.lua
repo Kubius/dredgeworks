@@ -7,7 +7,7 @@ function submergeOre(e)
 
     if num_deposits > 0 then
         for _, deposit in pairs(ore_deposits) do
-            if (surface.count_tiles_filtered{position=deposit.position, radius=deposit.get_radius(), collision_mask="water_tile"} == 1 ) then
+            if not string.find(deposit.name, "deep-") and (surface.count_tiles_filtered{position=deposit.position, radius=deposit.get_radius(), collision_mask="water_tile"} == 1 ) then
                 local try_deep = "deep-" .. deposit.name
                 if(deposit.prototype.mineable_properties) then
                     if(prototypes.entity[try_deep]) then
