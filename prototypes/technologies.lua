@@ -77,7 +77,7 @@ data:extend ({
     effects = {
       unlock("seafloor-drill"),
     },
-    prerequisites = {"floating-logistics-technology"},
+    prerequisites = {"floating-logistics-technology", "steel-processing"},
     unit = {
       count = 50,
       ingredients = {

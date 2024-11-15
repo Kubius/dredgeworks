@@ -1,4 +1,15 @@
 ---------------------------------------------------------------------------------------------------
+Version: 0.6.0
+
+  Changes:
+    - Seafloor drill now utilizes an earlier version of the electric mining drill from 0.18 (adapted from semi-classic-mining-drill) for distinct visuals.
+    - Seafloor drill now costs steel and iron sticks instead of flotation platforms (more befitting its new appearance as an elevated rig).
+    - In accordance with the new steel cost, seafloor drill research now requires steel processing as a prerequisite.
+    - Seafloor drill now has four module slots.
+    - New art for seafloor drill technology (still somewhat placeholder, but less obnoxiously so).
+    - Added description text to the alternate flotation platform recipe that utilizes wood.
+
+---------------------------------------------------------------------------------------------------
 Version: 0.5.3
 
   Changes:

@@ -346,6 +346,7 @@ local seafloor_drill = table.deepcopy(data.raw["mining-drill"]["electric-mining-
 seafloor_drill.name = "seafloor-drill"
 seafloor_drill.minable = {mining_time = 0.5, result = "seafloor-drill"}
 seafloor_drill.collision_mask = {layers = {ground_tile = true,object = true}}
+seafloor_drill.module_slots = 4
 seafloor_drill.fast_replaceable_group = nil
 seafloor_drill.next_upgrade = nil
 

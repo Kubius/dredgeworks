@@ -108,7 +108,8 @@ data:extend{
     enabled = false,
     energy_required = 1,
     ingredients = {
-      {type = "item", name = "flotation-platform", amount = 4},
+      {type = "item", name = "steel-plate", amount = 4},
+      {type = "item", name = "iron-stick", amount = 4},
       {type = "item", name = "electric-mining-drill", amount = 1}
     },
     results = {{type = "item", name = "seafloor-drill", amount = 1}}
