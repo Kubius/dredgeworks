@@ -16,18 +16,10 @@ if (settings.startup["no_inserter_flotation"].value == false) then
           {
             filename = DREDGEPATH .. "entity/flotation-platform.png",
             priority = "extra-high",
-            width = 32,
-            height = 32,
-            shift = {0, 0.1},
-            hr_version =
-            {
-              filename = DREDGEPATH .. "entity/hr-flotation-platform.png",
-              priority = "extra-high",
-              width = 64,
-              height = 64,
-              shift = {0, 0.1},
-              scale = 0.5
-            }
+            width = 64,
+            height = 64,
+            scale = 0.5,
+            shift = {0, 0.1}
           },
           floating_inserter.platform_picture.sheet
         }

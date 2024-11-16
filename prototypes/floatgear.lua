@@ -17,40 +17,21 @@ wire_buoy.pictures = {
       {
         filename = DREDGEPATH .. "entity/wire_buoy/wire-buoy.png",
         priority = "high",
-        width = 128,
-        height = 80,
+        width = 256,
+        height = 160,
         shift = util.by_pixel(0, -10),
-        scale = 1,
-        direction_count = 8,
-        hr_version = {
-          filename = DREDGEPATH .. "entity/wire_buoy/hr-wire-buoy.png",
-          priority = "high",
-          width = 256,
-          height = 160,
-          shift = util.by_pixel(0, -10),
-          scale = 0.5,
-          direction_count = 8,
-        }
+        scale = 0.5,
+        direction_count = 8
       },
       {
         filename = DREDGEPATH .. "entity/wire_buoy/wire-buoy-shadows.png",
         priority = "high",
-        width = 128,
-        height = 80,
+        width = 256,
+        height = 160,
         shift = util.by_pixel(0, -10),
-        scale = 1,
+        scale = 0.5,
         direction_count = 8,
-        draw_as_shadow = true,
-        hr_version = {
-          filename = DREDGEPATH .. "entity/wire_buoy/hr-wire-buoy-shadows.png",
-          priority = "high",
-          width = 256,
-          height = 160,
-          shift = util.by_pixel(0, -10),
-          scale = 0.5,
-          direction_count = 8,
-          draw_as_shadow = true,
-        }
+        draw_as_shadow = true
       },
     }
   }
@@ -261,68 +242,36 @@ light_buoy.picture_off = {
       {
         filename = DREDGEPATH .. "entity/light_buoy/light-buoy.png",
         priority = "high",
-        width = 56,
-        height = 52,
+        width = 112,
+        height = 104,
+        scale = 0.5,
         frame_count = 1,
         direction_count = 1,
-        shift = util.by_pixel(11,-2),
-        hr_version =
-        {
-          filename = DREDGEPATH .. "entity/light_buoy/hr-light-buoy.png",
-          priority = "high",
-          width = 112,
-          height = 104,
-          frame_count = 1,
-          direction_count = 1,
-          shift = util.by_pixel(11,-2),
-          scale = 0.5
-        }
+        shift = util.by_pixel(11,-2)
       },
       {
         filename = DREDGEPATH .. "entity/light_buoy/light-buoy-shadow.png",
         priority = "high",
-        width = 56,
-        height = 52,
+        width = 112,
+        height = 104,
+        scale = 0.5,
         frame_count = 1,
         direction_count = 1,
         shift = util.by_pixel(11,-2),
-        draw_as_shadow = true,
-        hr_version =
-        {
-          filename = DREDGEPATH .. "entity/light_buoy/hr-light-buoy-shadow.png",
-          priority = "high",
-          width = 112,
-          height = 104,
-          frame_count = 1,
-          direction_count = 1,
-          shift = util.by_pixel(11,-2),
-          draw_as_shadow = true,
-          scale = 0.5
-        }
+        draw_as_shadow = true
       }
     }
   }
 light_buoy.picture_on = {
     filename = DREDGEPATH .. "entity/light_buoy/light-buoy-glow.png",
     priority = "high",
-    width = 85,
-    height = 85,
+    width = 170,
+    height = 170,
+    scale = 0.5,
     frame_count = 1,
     direction_count = 1,
     shift = util.by_pixel(0, -12),
-    tint = {r = 1, g = 0.9, b = 0.8, a = 0.8},
-    hr_version =
-    {
-      filename = DREDGEPATH .. "entity/light_buoy/hr-light-buoy-glow.png",
-      priority = "high",
-      width = 170,
-      height = 170,
-      frame_count = 1,
-      direction_count = 1,
-      shift = util.by_pixel(0, -12),
-      tint = {r = 1, g = 0.9, b = 0.8, a = 0.8},
-      scale = 0.5
-    }
+    tint = {r = 1, g = 0.9, b = 0.8, a = 0.8}
   }
 light_buoy.water_reflection = {
     pictures = {
@@ -358,20 +307,11 @@ local floating_belt_animation_set =
   {
     filename = DREDGEPATH .. "entity/floating_belt/floating-belt.png",
     priority = "extra-high",
-    width = 64,
-    height = 64,
+    width = 128,
+    height = 128,
+    scale = 0.5,
     frame_count = 16,
-    direction_count = 20,
-    hr_version =
-    {
-      filename = DREDGEPATH .. "entity/floating_belt/hr-floating-belt.png",
-      priority = "extra-high",
-      width = 128,
-      height = 128,
-      scale = 0.5,
-      frame_count = 16,
-      direction_count = 20
-    }
+    direction_count = 20
   },
 }
 
