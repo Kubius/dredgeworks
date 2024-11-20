@@ -1,3 +1,5 @@
+local collision_mask_util = require("collision-mask-util")
+
 -- Remove most restrictions on concrete placement
 
 data:extend({{type = "collision-layer", name = "ref_concrete_valid"}})
@@ -37,32 +39,25 @@ data.raw.item["refined-hazard-concrete"].place_as_tile = {
     invert = true
 }
 
--- Cargo Ships compatibility: remove land resource filter, add a special condition for crude oil
+-- Remove main land resource filter, add a filter to manage special conditions for shallow resources we don't submerge
+data:extend({{type = "collision-layer", name = "shallow_resource"}})
+local tiles = {"deepwater","deepwater-green","water","water-green","water-mud","water-shallow","landfill"}
+for _,tile in pairs(tiles) do 
+    local thistile = data.raw["tile"][tile]
+    if thistile then
+        local mask = data.raw["tile"][tile].collision_mask.layers
+        if mask["resource"] then
+            mask["resource"] = nil
+            mask["shallow_resource"] = true
+        end
+    end
+end
+
+-- If we have Cargo Ships, we have offshore oil; remove the land deposits from water accordingly
 if mods["cargo-ships"] then
-    data:extend({{type = "collision-layer", name = "block_shallow_crude"}})
-    local tiles = {"deepwater","deepwater-green","water","water-green","water-mud","water-shallow","landfill"}
-    for _,tile in pairs(tiles) do 
-        local thistile = data.raw["tile"][tile]
-        if thistile then
-            local mask = data.raw["tile"][tile].collision_mask.layers
-            if mask["land_resource"] then
-                mask["land_resource"] = nil
-                mask["block_shallow_crude"] = true
-            end
-        end
-    end
-    data.raw.resource["crude-oil"].collision_mask.layers["block_shallow_crude"] = true
-else
-    local tiles = {"deepwater","deepwater-green","water","water-green","water-mud","water-shallow","landfill"}
-    for _,tile in pairs(tiles) do 
-        local thistile = data.raw["tile"][tile]
-        if thistile then
-            local mask = data.raw["tile"][tile].collision_mask.layers
-            if mask["resource"] then
-                mask["resource"] = nil
-            end
-        end
-    end
+    local crude_mask = collision_mask_util.get_mask(data.raw.resource["crude-oil"])
+    crude_mask.layers["shallow_resource"] = true
+    data.raw.resource["crude-oil"].collision_mask = crude_mask
 end
 
 -- Change unfiltered inserters to not catch fish
