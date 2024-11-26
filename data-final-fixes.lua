@@ -5,8 +5,8 @@ local collision_mask_util = require("collision-mask-util")
 data:extend({{type = "collision-layer", name = "ref_concrete_valid"}})
 
 local valid_concrete_targets = {
-    "water", "deepwater", "water-green", "deepwater-green", -- all water
-    "water-mud", "water-shallow", -- all shallows
+    "water", "deepwater", "water-green", "deepwater-green", "gleba-deep-lake", -- all water
+    "water-mud", "water-shallow", "wetland-blue-slime", -- all shallows
     "wetland-light-green-slime", "wetland-green-slime", "wetland-light-dead-skin", "wetland-dead-skin", "wetland-pink-tentacle", "wetland-red-tentacle", "wetland-yumako", "wetland-jellynut",
     "oil-ocean-shallow" -- shallow oil ocean (deep is a bit too much to stretch to)
     -- no lava or ammonia
@@ -41,7 +41,7 @@ data.raw.item["refined-hazard-concrete"].place_as_tile = {
 
 -- Remove main land resource filter, add a filter to manage special conditions for shallow resources we don't submerge
 data:extend({{type = "collision-layer", name = "shallow_resource"}})
-local tiles = {"deepwater","deepwater-green","water","water-green","water-mud","water-shallow","landfill"}
+local tiles = {"deepwater","deepwater-green","water","water-green","water-mud","water-shallow","landfill","gleba-deep-lake","wetland-blue-slime"}
 for _,tile in pairs(tiles) do 
     local thistile = data.raw["tile"][tile]
     if thistile then
