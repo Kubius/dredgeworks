@@ -1,4 +1,10 @@
 ---------------------------------------------------------------------------------------------------
+Version: 0.6.4
+
+  Changes:
+    - Fixed an error (probably introduced in 2.0 update) where the floating belt recipe cost more belts than intended.
+
+---------------------------------------------------------------------------------------------------
 Version: 0.6.3
 
   Changes:

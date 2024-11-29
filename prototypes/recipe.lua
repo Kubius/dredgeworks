@@ -123,6 +123,6 @@ data:extend{
       {type = "item", name = "flotation-platform", amount = 1},
       {type = "item", name = "transport-belt", amount = 2}
     },
-    results = {{type = "item", name = "floating-belt", amount = 1}}
+    results = {{type = "item", name = "floating-belt", amount = 2}}
   },
 }
