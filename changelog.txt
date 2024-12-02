@@ -1,4 +1,10 @@
 ---------------------------------------------------------------------------------------------------
+Version: 0.7.0
+
+  Changes:
+    - Split graphics off to a distinct package for better mod structure. No functionality changes in this version.
+
+---------------------------------------------------------------------------------------------------
 Version: 0.6.4
 
   Changes:
