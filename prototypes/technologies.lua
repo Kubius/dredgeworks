@@ -14,10 +14,6 @@ local function unlockFlotation(recipe)
       {
         type = "unlock-recipe",
         recipe = "flotation-platform-wood"
-      },
-      {
-        type = "unlock-recipe",
-        recipe = "floating-belt"
       }
     }
     for _, insertername in pairs(floating_inserter_index) do
@@ -28,6 +24,14 @@ local function unlockFlotation(recipe)
           }
         )
       end
+    end
+    for _, beltname in pairs(floating_belt_index) do
+      table.insert(stuff2unlock,
+        {
+          type = "unlock-recipe",
+          recipe = beltname[1]
+        }
+      )
     end
     return stuff2unlock
   end

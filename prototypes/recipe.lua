@@ -1,38 +1,21 @@
-if (settings.startup["no_inserter_flotation"].value == false) then
-  for _, inserter_entry in pairs(floating_inserter_index) do
-    if (mods["boblogistics"] and settings.startup["bobmods-logistics-inserteroverhaul"].value == true) then --manual bob compat
-      if(inserter_entry[1] == "floating-red-inserter") then
-        data:extend{
-          {
-            type = "recipe",
-            name = inserter_entry[1],
-            localised_name = inserter_entry[2],
-            enabled = false,
-            energy_required = 0.5,
-            ingredients = {
-              {type = "item", name = "long-handed-inserter", amount = 1},
-              {type = "item", name = "flotation-platform", amount = 1}
-            },
-            results = {{type = "item", name = inserter_entry[1], amount = 1}}
-          }
+for _, inserter_entry in pairs(floating_inserter_index) do
+  if (mods["boblogistics"] and settings.startup["bobmods-logistics-inserteroverhaul"].value == true) then --manual bob compat
+    if(inserter_entry[1] == "floating-red-inserter") then
+      data:extend{
+        {
+          type = "recipe",
+          name = inserter_entry[1],
+          localised_name = inserter_entry[2],
+          enabled = false,
+          energy_required = 0.5,
+          ingredients = {
+            {type = "item", name = "long-handed-inserter", amount = 1},
+            {type = "item", name = "flotation-platform", amount = 1}
+          },
+          results = {{type = "item", name = inserter_entry[1], amount = 1}}
         }
-      elseif(inserter_entry[1] ~= "floating-long-handed-inserter") then
-        data:extend{
-          {
-            type = "recipe",
-            name = inserter_entry[1],
-            localised_name = inserter_entry[2],
-            enabled = false,
-            energy_required = 0.5,
-            ingredients = {
-              {type = "item", name = inserter_entry[3], amount = 1},
-              {type = "item", name = "flotation-platform", amount = 1}
-            },
-            results = {{type = "item", name = inserter_entry[1], amount = 1}}
-          }
-        }
-      end
-    else
+      }
+    elseif(inserter_entry[1] ~= "floating-long-handed-inserter") then
       data:extend{
         {
           type = "recipe",
@@ -48,7 +31,45 @@ if (settings.startup["no_inserter_flotation"].value == false) then
         }
       }
     end
+  else
+    data:extend{
+      {
+        type = "recipe",
+        name = inserter_entry[1],
+        localised_name = inserter_entry[2],
+        enabled = false,
+        energy_required = 0.5,
+        ingredients = {
+          {type = "item", name = inserter_entry[3], amount = 1},
+          {type = "item", name = "flotation-platform", amount = 1}
+        },
+        results = {{type = "item", name = inserter_entry[1], amount = 1}}
+      }
+    }
   end
+end
+
+for _, belt_entry in pairs(floating_belt_index) do
+  --Increase flotation cost of belts based on how much throughput they have
+  local belt_equipment_weight = math.ceil((data.raw["transport-belt"][belt_entry[1]].speed * 31) ^ 1.5)
+  local belts_a_batch = 2
+  if (belt_equipment_weight > 1) then
+    belts_a_batch = 1
+  end
+  data:extend{
+    {
+      type = "recipe",
+      name = belt_entry[1],
+      localised_name = belt_entry[2],
+      enabled = false,
+      energy_required = 0.5,
+      ingredients = {
+        {type = "item", name = belt_entry[3], amount = belts_a_batch},
+        {type = "item", name = "flotation-platform", amount = belt_equipment_weight}
+      },
+      results = {{type = "item", name = belt_entry[1], amount = belts_a_batch}}
+    }
+  }
 end
 
 data:extend{
@@ -113,16 +134,5 @@ data:extend{
       {type = "item", name = "electric-mining-drill", amount = 1}
     },
     results = {{type = "item", name = "seafloor-drill", amount = 1}}
-  },
-  {
-    type = "recipe",
-    name = "floating-belt",
-    enabled = false,
-    energy_required = 0.5,
-    ingredients = {
-      {type = "item", name = "flotation-platform", amount = 1},
-      {type = "item", name = "transport-belt", amount = 2}
-    },
-    results = {{type = "item", name = "floating-belt", amount = 2}}
-  },
+  }
 }

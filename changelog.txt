@@ -1,4 +1,11 @@
 ---------------------------------------------------------------------------------------------------
+Version: 0.7.1
+
+  Changes:
+    - Floating variants of belts are now procedurally generated from base variants. Higher throughput increases the flotation platform cost significantly.
+    - Limitation of floating belt and inserter generation in settings now restricts generation to base-game variants instead of removing it entirely.
+
+---------------------------------------------------------------------------------------------------
 Version: 0.7.0
 
   Changes:

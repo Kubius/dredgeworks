@@ -24,9 +24,16 @@ data:extend{
     },
     {
         type = "bool-setting",
-        name = "no_inserter_flotation",
+        name = "limit_belt_flotation",
         setting_type = "startup",
         default_value = false,
         order = "c-d"
+    },
+    {
+        type = "bool-setting",
+        name = "limit_inserter_flotation",
+        setting_type = "startup",
+        default_value = false,
+        order = "c-e"
     },
 }

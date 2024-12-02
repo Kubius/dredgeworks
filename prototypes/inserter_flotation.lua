@@ -1,6 +1,20 @@
-local to_add = {}
-if (settings.startup["no_inserter_flotation"].value == false) then
-  for _, prototype in pairs(data.raw["inserter"]) do
+local inserters_to_add = {}
+
+local target_list
+if (settings.startup["limit_inserter_flotation"].value == false) then
+  target_list = data.raw["inserter"]
+else
+  target_list = {
+    data.raw["inserter"]["burner-inserter"],
+    data.raw["inserter"]["inserter"],
+    data.raw["inserter"]["fast-inserter"],
+    data.raw["inserter"]["long-handed-inserter"],
+    data.raw["inserter"]["bulk-inserter"]
+  }
+end
+
+if (target_list) then
+  for _, prototype in pairs(target_list) do
     if (prototype.minable and prototype.draw_held_item ~= false and (prototype.hand_base_picture and prototype.hand_base_picture["width"] ~= 1)) then
       local floating_inserter = table.deepcopy(prototype)
       floating_inserter.name = "floating-" .. prototype.name
@@ -35,11 +49,11 @@ if (settings.startup["no_inserter_flotation"].value == false) then
           mine_target
         }
       )
-      table.insert(to_add,floating_inserter)
+      table.insert(inserters_to_add,floating_inserter)
     end
   end
 
-  data:extend(to_add)
+  data:extend(inserters_to_add)
 
   for entry_number, inserter_entry in pairs(floating_inserter_index) do
       if(not data.raw["item"][inserter_entry[1]]) then -- avoid duplicates from redundant mine results

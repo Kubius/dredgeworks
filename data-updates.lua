@@ -1,4 +1,5 @@
 require("__dredgeworks__/prototypes/resources")
+require("__dredgeworks__/prototypes/belt_flotation")
 require("__dredgeworks__/prototypes/inserter_flotation")
 require("__dredgeworks__/prototypes/technologies")
 require("__dredgeworks__/prototypes/item")

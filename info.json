@@ -1,13 +1,13 @@
 {
   "name": "dredgeworks",
-  "version": "0.7.0",
+  "version": "0.7.1",
   "factorio_version": "2.0",
   "title": "Dredgeworks",
   "author": "Kubius",
   "description": "Ore patches now spill over into the sea as submerged variants. Dredge them up with new floating hardware, and build deeper into the blue with water-placeable, removable refined concrete.",
   "dependencies": [
     "base >= 2.0.7",
-    "dredgeworks-graphics",
+    "dredgeworks-graphics >= 0.1.1",
     "? cargo-ships",
     "? rso-mod",
     "! Water_Ores"

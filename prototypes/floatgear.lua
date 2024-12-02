@@ -315,13 +315,4 @@ local floating_belt_animation_set =
   },
 }
 
-local floating_belt = table.deepcopy(data.raw["transport-belt"]["transport-belt"])
-floating_belt.name = "floating-belt"
-floating_belt.minable = {mining_time = 0.1, result = "floating-belt"}
-floating_belt.collision_mask = {layers = {ground_tile = true,object = true,transport_belt = true}}
-floating_belt.fast_replaceable_group = "floating-transport-belt"
-floating_belt.next_upgrade = nil
-floating_belt.belt_animation_set = floating_belt_animation_set
-floating_belt.max_health = 150
-
-data:extend({wire_buoy,light_buoy,seafloor_drill,floating_belt})
+data:extend({wire_buoy,light_buoy,seafloor_drill})
