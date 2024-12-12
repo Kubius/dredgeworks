@@ -1,4 +1,10 @@
 ---------------------------------------------------------------------------------------------------
+Version: 0.7.3
+
+  Changes:
+    - Switch detection mechanism added in last update to a better one that doesn't break things.
+
+---------------------------------------------------------------------------------------------------
 Version: 0.7.2
 
   Changes:
