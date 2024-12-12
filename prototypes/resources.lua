@@ -3,7 +3,7 @@ local submerged_ores = {}
 
 for _, prototype in pairs(data.raw.resource) do
 
-  if(prototype.category == nil or prototype.category == "basic-solid") then
+  if((prototype.category == nil and allow_floating_edgecase) or prototype.category == "basic-solid") then
     local deep_ore = table.deepcopy(prototype)
 
     log("dredgeworks: creating submerged ".. prototype.name)

@@ -1,4 +1,10 @@
 ---------------------------------------------------------------------------------------------------
+Version: 0.7.2
+
+  Changes:
+    - Updated "unusual deposits on water" setting to not generate non-basic-solid submerged resource variants when inactive (the default). Restores Maraxsis compatibility.
+
+---------------------------------------------------------------------------------------------------
 Version: 0.7.1
 
   Changes:
