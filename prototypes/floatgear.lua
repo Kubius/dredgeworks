@@ -7,8 +7,8 @@ wire_buoy.icon_size = 64
 wire_buoy.icon_mipmaps = 0
 wire_buoy.minable = {mining_time = 0.3, result = "wire-buoy"}
 wire_buoy.collision_mask = {layers = {ground_tile = true,object = true}}
-wire_buoy.maximum_wire_distance = 10
-wire_buoy.supply_area_distance = 4
+wire_buoy.maximum_wire_distance = 13
+wire_buoy.supply_area_distance = 5
 wire_buoy.fast_replaceable_group = nil
 wire_buoy.next_upgrade = nil
 

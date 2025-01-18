@@ -1,4 +1,11 @@
 ---------------------------------------------------------------------------------------------------
+Version: 0.7.5
+
+  Changes:
+    - Buffed wire buoy capabilities to make them more practical for complex aquatic setups, and more worth the material and space investment.
+    - Baseline supply radius has increased from 4 to 5 (8x8 area > 10x10), and baseline wire reach has increased from 10 to 13.
+
+---------------------------------------------------------------------------------------------------
 Version: 0.7.4
 
   Changes:
