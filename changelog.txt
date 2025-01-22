@@ -1,4 +1,10 @@
 ---------------------------------------------------------------------------------------------------
+Version: 0.7.6
+
+  Changes:
+    - Updated the submerged ore description in base locale to better describe its covering behavior. This is not a functionality change.
+
+---------------------------------------------------------------------------------------------------
 Version: 0.7.5
 
   Changes:
