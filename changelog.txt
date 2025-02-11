@@ -1,4 +1,16 @@
 ---------------------------------------------------------------------------------------------------
+Version: 0.8.0
+
+  Changes:
+    - Minimum game version bumped to 2.0.34, as a bugfix therein is needed for the feature below.
+    - Refined concrete now once again has an increased cost, in a different way than the pre-2.0 behavior removed in mod version 0.4.2.
+    - Instead of lower recipe yield (as that would disrupt recipes requiring the item), placing it as a tile now costs multiple refined concrete items.
+    - The default cost to place refined concrete is three pieces (roughly similar to the pre-2.0 balance of reducing recipe yield by 60%) - value is configurable.
+    - Pasting blueprints over "sea" tiles refined concrete can be built on will now default to using refined concrete instead of landfill. This can be disabled.
+    - Fulgoran shallow oil ocean is no longer eligible for refined concrete placement by default, for balance purposes; this has been moved to a config option.
+    - Removed fishing-related adjustments, as they are no longer pertinent in 2.0.
+
+---------------------------------------------------------------------------------------------------
 Version: 0.7.6
 
   Changes:
