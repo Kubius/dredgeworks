@@ -70,6 +70,12 @@ if mods["cargo-ships"] then
     data.raw.resource["crude-oil"].collision_mask = crude_mask
 end
 
+-- Optional: belt stacking for seafloor drills (not default due to it being kind of weird stacking heavy ores on floating belts)
+if mods["space-age"] and settings.startup["seafloor_drill_beltstack"].value then
+    local sf_drill = data.raw["mining-drill"]["seafloor-drill"]
+    sf_drill.drops_full_belt_stacks = true
+end
+
 --Increase concrete placement cost to slightly counterbalance lower material imposition
 if settings.startup["concrete_placement_cost"].value > 0 then
     local conc_cost = settings.startup["concrete_placement_cost"].value

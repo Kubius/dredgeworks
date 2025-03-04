@@ -1,4 +1,10 @@
 ---------------------------------------------------------------------------------------------------
+Version: 0.8.1
+
+  Changes:
+    - A config setting is now available to enable belt stacking for seafloor drills if Space Age is included. It's not enabled by default.
+
+---------------------------------------------------------------------------------------------------
 Version: 0.8.0
 
   Changes:
