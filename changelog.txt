@@ -1,4 +1,12 @@
 ---------------------------------------------------------------------------------------------------
+Version: 0.8.2
+
+  Changes:
+    - Updated floating inserter generation procedure.
+    - Floating stack inserters are now generated in limited floating inserter generation mode if Space Age is enabled.
+    - A floating version of the Editor Extensions super inserter is no longer generated.
+
+---------------------------------------------------------------------------------------------------
 Version: 0.8.1
 
   Changes:

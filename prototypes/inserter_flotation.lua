@@ -11,11 +11,20 @@ else
     data.raw["inserter"]["long-handed-inserter"],
     data.raw["inserter"]["bulk-inserter"]
   }
+  if mods["space-age"] then table.insert(target_list,data.raw["inserter"]["stack-inserter"]) end
+end
+
+local function inserter_eval(target_inserter)
+  if not target_inserter.minable then log("dredgeworks: no minable") return end
+  if target_inserter.draw_held_item == false then log("dredgeworks: no dhi") return end
+  if not (target_inserter.hand_base_picture and target_inserter.hand_base_picture["width"] ~= 1) then log("dredgeworks: no hbp") return end
+  if target_inserter.name == "ee-super-inserter" then return end
+  return true
 end
 
 if (target_list) then
   for _, prototype in pairs(target_list) do
-    if (prototype.minable and prototype.draw_held_item ~= false and (prototype.hand_base_picture and prototype.hand_base_picture["width"] ~= 1)) then
+    if inserter_eval(prototype) then
       local floating_inserter = table.deepcopy(prototype)
       floating_inserter.name = "floating-" .. prototype.name
       floating_inserter.localised_name = {"dredgeworks.floated", prototype.localised_name or ({"entity-name." .. prototype.name})}
