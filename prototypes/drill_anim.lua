@@ -1,6 +1,6 @@
 -- Contents adapted from Kirazy's Semi-Classic Mining Drill port under MIT license
 --
--- License preserved in MIT_LICENSE in project directory.
+-- License preserved in MIT_LICENSE file in same directory.
 
 -- Mining Drill Constants and Functions
 
