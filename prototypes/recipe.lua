@@ -136,3 +136,10 @@ data:extend{
     results = {{type = "item", name = "seafloor-drill", amount = 1}}
   }
 }
+
+if mods["quality"] then
+  local recycling = require("__quality__/prototypes/recycling")
+  recycling.generate_recycling_recipe(data.raw["recipe"]["wire-buoy"])
+  recycling.generate_recycling_recipe(data.raw["recipe"]["light-buoy"])
+  recycling.generate_recycling_recipe(data.raw["recipe"]["seafloor-drill"])
+end

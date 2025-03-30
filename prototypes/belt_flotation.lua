@@ -53,7 +53,7 @@ for entry_number, belt_entry in pairs(floating_belt_index) do
           {icon = DREDGEPATH .. "icons/floating-belt.png", icon_size = 64}
       }
     end
-    floatybelt.order = "q-" .. floatybelt.order
+    floatybelt.order = "q-" .. (floatybelt.order or "x")
     floatybelt.place_result = belt_entry[1]
     data:extend{floatybelt}
   end

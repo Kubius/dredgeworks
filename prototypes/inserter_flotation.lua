@@ -77,7 +77,7 @@ if (target_list) then
                   {icon = floatserter.icon}
               }
           end
-          floatserter.order = "q-" .. floatserter.order
+          floatserter.order = "q-" .. (floatserter.order or "x")
           floatserter.place_result = inserter_entry[1]
           data:extend{floatserter}
       end
