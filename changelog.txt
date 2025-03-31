@@ -1,4 +1,11 @@
 ---------------------------------------------------------------------------------------------------
+Version: 0.8.5
+
+  Changes:
+    - Updated 'boblogistics' red inserter compatibility. Belt flotation for its belts does not currently work due to out-of-spec item icon size.
+    - To temporarily circumvent the above issue, please enable "Limit floating belt generation" until boblogistics has fixed the issue on that end.
+
+---------------------------------------------------------------------------------------------------
 Version: 0.8.4
 
   Changes:

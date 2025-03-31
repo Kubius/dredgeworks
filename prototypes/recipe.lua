@@ -1,6 +1,6 @@
 for _, inserter_entry in pairs(floating_inserter_index) do
   if (mods["boblogistics"] and settings.startup["bobmods-logistics-inserteroverhaul"].value == true) then --manual bob compat
-    if(inserter_entry[1] == "floating-red-inserter") then
+    if(inserter_entry[1] == "floating-bob-red-inserter") then
       data:extend{
         {
           type = "recipe",
