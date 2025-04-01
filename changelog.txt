@@ -1,4 +1,11 @@
 ---------------------------------------------------------------------------------------------------
+Version: 0.8.6
+
+  Changes:
+    - Ore submersion procedure should now be better at removing water-overlapping resources of a large size.
+    - Ore submersion procedure should now tolerate resources without a mining product, destroying them where they intersect with water unless "Allow unusual deposits on water" is active.
+
+---------------------------------------------------------------------------------------------------
 Version: 0.8.5
 
   Changes:

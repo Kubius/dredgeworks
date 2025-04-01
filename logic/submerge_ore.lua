@@ -7,9 +7,10 @@ function submergeOre(e)
 
     if num_deposits > 0 then
         for _, deposit in pairs(ore_deposits) do
-            if not string.find(deposit.name, "deep-") and (surface.count_tiles_filtered{position=deposit.position, radius=deposit.get_radius(), collision_mask="water_tile"} == 1 ) then
+            if not string.find(deposit.name, "deep-") and (surface.count_tiles_filtered{position=deposit.position, radius=deposit.get_radius(), collision_mask="water_tile"} >= 1 ) then
                 local try_deep = "deep-" .. deposit.name
                 if(deposit.prototype.mineable_properties) then
+                    local mineprop = deposit.prototype.mineable_properties.products
                     if(prototypes.entity[try_deep]) then
                         local oldpos = deposit.position
                         local oldamt = deposit.amount
@@ -18,7 +19,7 @@ function submergeOre(e)
                         if (surface.count_tiles_filtered{position=oldpos, radius=checkrad, collision_mask="ground_tile"} == 0 ) then
                             surface.create_entity{name=try_deep, amount=oldamt, position=oldpos}
                         end
-                    elseif((not allow_floating_edgecase) and deposit.prototype.mineable_properties.products[1].type ~= "fluid") then
+                    elseif((not allow_floating_edgecase) and (not mineprop or mineprop[1].type ~= "fluid")) then
                         deposit.destroy()
                     end
                 else
