@@ -49,7 +49,7 @@ for entry_number, belt_entry in pairs(floating_belt_index) do
       table.insert(floatybelt.icons,{icon = DREDGEPATH .. "icons/floating-belt.png", icon_size = 64})
     else
       floatybelt.icons = {
-          {icon = floatybelt.icon},
+          {icon = floatybelt.icon, icon_size = floatybelt.icon_size},
           {icon = DREDGEPATH .. "icons/floating-belt.png", icon_size = 64}
       }
     end
