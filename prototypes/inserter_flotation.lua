@@ -74,7 +74,7 @@ if (target_list) then
           else
               floatserter.icons = {
                   {icon = DREDGEPATH .. "icons/flotation-platform.png", icon_size = 64},
-                  {icon = floatserter.icon}
+                  {icon = floatserter.icon, icon_size = floatserter.icon_size}
               }
           end
           floatserter.order = "q-" .. (floatserter.order or "x")
