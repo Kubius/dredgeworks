@@ -1,51 +1,74 @@
+local recipes = data.raw.recipe
+local recycle_lib = nil
+
+if mods["quality"] then
+  recycle_lib = require("__quality__.prototypes.recycling")
+end
+
+local function recyclo_dummy()
+  return true
+end
+
 for _, inserter_entry in pairs(floating_inserter_index) do
+  local create_inserter_recipe = nil
   if (mods["boblogistics"] and settings.startup["bobmods-logistics-inserteroverhaul"].value == true) then --manual bob compat
     if(inserter_entry[1] == "floating-bob-red-inserter") then
-      data:extend{
-        {
-          type = "recipe",
-          name = inserter_entry[1],
-          localised_name = inserter_entry[2],
-          enabled = false,
-          energy_required = 0.5,
-          ingredients = {
-            {type = "item", name = "long-handed-inserter", amount = 1},
-            {type = "item", name = "flotation-platform", amount = 1}
-          },
-          results = {{type = "item", name = inserter_entry[1], amount = 1}}
-        }
-      }
-    elseif(inserter_entry[1] ~= "floating-long-handed-inserter") then
-      data:extend{
-        {
-          type = "recipe",
-          name = inserter_entry[1],
-          localised_name = inserter_entry[2],
-          enabled = false,
-          energy_required = 0.5,
-          ingredients = {
-            {type = "item", name = inserter_entry[3], amount = 1},
-            {type = "item", name = "flotation-platform", amount = 1}
-          },
-          results = {{type = "item", name = inserter_entry[1], amount = 1}}
-        }
-      }
-    end
-  else
-    data:extend{
-      {
+      create_inserter_recipe = {
         type = "recipe",
         name = inserter_entry[1],
         localised_name = inserter_entry[2],
         enabled = false,
         energy_required = 0.5,
+        allow_quality = false,
+        auto_recycle = false,
+        ingredients = {
+          {type = "item", name = "long-handed-inserter", amount = 1},
+          {type = "item", name = "flotation-platform", amount = 1}
+        },
+        results = {{type = "item", name = inserter_entry[1], amount = 1}}
+      }
+    elseif(inserter_entry[1] ~= "floating-long-handed-inserter") then
+      create_inserter_recipe = {
+        type = "recipe",
+        name = inserter_entry[1],
+        localised_name = inserter_entry[2],
+        enabled = false,
+        energy_required = 0.5,
+        allow_quality = false,
+        auto_recycle = false,
         ingredients = {
           {type = "item", name = inserter_entry[3], amount = 1},
           {type = "item", name = "flotation-platform", amount = 1}
         },
         results = {{type = "item", name = inserter_entry[1], amount = 1}}
       }
+    end
+  else
+    create_inserter_recipe = {
+      type = "recipe",
+      name = inserter_entry[1],
+      localised_name = inserter_entry[2],
+      enabled = false,
+      energy_required = 0.5,
+      allow_quality = false,
+      auto_recycle = false,
+      ingredients = {
+        {type = "item", name = inserter_entry[3], amount = 1},
+        {type = "item", name = "flotation-platform", amount = 1}
+      },
+      results = {{type = "item", name = inserter_entry[1], amount = 1}}
     }
+  end
+  data:extend{create_inserter_recipe}
+  if mods["quality"] then
+    recycle_lib.generate_recycling_recipe(create_inserter_recipe,recyclo_dummy)
+    local adjustment_target = inserter_entry[1] .. "-recycling"
+    local adjust_recycling_recipe = data.raw["recipe"][adjustment_target]
+    adjust_recycling_recipe.allow_quality = false
+    adjust_recycling_recipe.results[1].amount = 1
+    adjust_recycling_recipe.results[1].extra_count_fraction = nil
+    adjust_recycling_recipe.results[2].amount = 1
+    adjust_recycling_recipe.results[2].extra_count_fraction = nil
   end
 end
 
@@ -56,20 +79,36 @@ for _, belt_entry in pairs(floating_belt_index) do
   if (belt_equipment_weight > 1) then
     belts_a_batch = 1
   end
-  data:extend{
-    {
-      type = "recipe",
-      name = belt_entry[1],
-      localised_name = belt_entry[2],
-      enabled = false,
-      energy_required = 0.5,
-      ingredients = {
-        {type = "item", name = belt_entry[3], amount = belts_a_batch},
-        {type = "item", name = "flotation-platform", amount = belt_equipment_weight}
-      },
-      results = {{type = "item", name = belt_entry[1], amount = belts_a_batch}}
-    }
+  local do_the_float_belt = {
+    type = "recipe",
+    name = belt_entry[1],
+    localised_name = belt_entry[2],
+    enabled = false,
+    energy_required = 0.5,
+    allow_quality = false,
+    auto_recycle = false,
+    ingredients = {
+      {type = "item", name = belt_entry[3], amount = belts_a_batch},
+      {type = "item", name = "flotation-platform", amount = belt_equipment_weight}
+    },
+    results = {{type = "item", name = belt_entry[1], amount = belts_a_batch}}
   }
+  data:extend{do_the_float_belt}
+  if mods["quality"] then
+    recycle_lib.generate_recycling_recipe(do_the_float_belt,recyclo_dummy)
+    local adjustment_target = belt_entry[1] .. "-recycling"
+    local adjust_recycling_recipe = data.raw["recipe"][adjustment_target]
+    adjust_recycling_recipe.allow_quality = false
+    adjust_recycling_recipe.results[1].amount = 1
+    adjust_recycling_recipe.results[1].extra_count_fraction = nil
+    if belts_a_batch == 2 then
+      adjust_recycling_recipe.results[2].amount = 0
+      adjust_recycling_recipe.results[2].extra_count_fraction = 0.5
+    else
+      adjust_recycling_recipe.results[2].amount = belt_equipment_weight
+      adjust_recycling_recipe.results[2].extra_count_fraction = nil
+    end
+  end
 end
 
 data:extend{
@@ -138,8 +177,7 @@ data:extend{
 }
 
 if mods["quality"] then
-  local recycling = require("__quality__/prototypes/recycling")
-  recycling.generate_recycling_recipe(data.raw["recipe"]["wire-buoy"])
-  recycling.generate_recycling_recipe(data.raw["recipe"]["light-buoy"])
-  recycling.generate_recycling_recipe(data.raw["recipe"]["seafloor-drill"])
+  recycle_lib.generate_recycling_recipe(data.raw["recipe"]["wire-buoy"])
+  recycle_lib.generate_recycling_recipe(data.raw["recipe"]["light-buoy"])
+  recycle_lib.generate_recycling_recipe(data.raw["recipe"]["seafloor-drill"])
 end

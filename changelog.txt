@@ -1,4 +1,12 @@
 ---------------------------------------------------------------------------------------------------
+Version: 0.8.8
+
+  Changes:
+    - Added recycler disassembly of floating belts/inserters if recycling is available.
+    - Disassembling a floating belt or inserter will return all ingredients at 100% efficiency, at the original provided quality.
+    - To avoid quality loops with this change, both creating and disassembling floating belts and inserters does not allow quality modules.
+
+---------------------------------------------------------------------------------------------------
 Version: 0.8.7
 
   Changes:
