@@ -59,16 +59,18 @@ for _, inserter_entry in pairs(floating_inserter_index) do
       results = {{type = "item", name = inserter_entry[1], amount = 1}}
     }
   end
-  data:extend{create_inserter_recipe}
-  if mods["quality"] then
-    recycle_lib.generate_recycling_recipe(create_inserter_recipe,recyclo_dummy)
-    local adjustment_target = inserter_entry[1] .. "-recycling"
-    local adjust_recycling_recipe = data.raw["recipe"][adjustment_target]
-    adjust_recycling_recipe.allow_quality = false
-    adjust_recycling_recipe.results[1].amount = 1
-    adjust_recycling_recipe.results[1].extra_count_fraction = nil
-    adjust_recycling_recipe.results[2].amount = 1
-    adjust_recycling_recipe.results[2].extra_count_fraction = nil
+  if create_inserter_recipe then
+    data:extend{create_inserter_recipe}
+    if mods["quality"] then
+      recycle_lib.generate_recycling_recipe(create_inserter_recipe,recyclo_dummy)
+      local adjustment_target = inserter_entry[1] .. "-recycling"
+      local adjust_recycling_recipe = data.raw["recipe"][adjustment_target]
+      adjust_recycling_recipe.allow_quality = false
+      adjust_recycling_recipe.results[1].amount = 1
+      adjust_recycling_recipe.results[1].extra_count_fraction = nil
+      adjust_recycling_recipe.results[2].amount = 1
+      adjust_recycling_recipe.results[2].extra_count_fraction = nil
+    end
   end
 end
 
