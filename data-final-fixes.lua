@@ -79,6 +79,8 @@ end
 --Increase concrete placement cost to slightly counterbalance lower material imposition
 if settings.startup["concrete_placement_cost"].value > 0 then
     local conc_cost = settings.startup["concrete_placement_cost"].value
+    data.raw.item["refined-concrete"].localised_description = {"dredgeworks.refined-concrete-pricy", tostring(conc_cost)}
+    data.raw.item["refined-hazard-concrete"].localised_description = {"dredgeworks.refined-concrete-pricy", tostring(conc_cost)}
     data.raw.tile["refined-concrete"].placeable_by = {item = "refined-concrete", count = conc_cost}
     data.raw.tile["refined-hazard-concrete-left"].placeable_by = {item = "refined-hazard-concrete", count = conc_cost}
     data.raw.tile["refined-hazard-concrete-right"].placeable_by = {item = "refined-hazard-concrete", count = conc_cost}

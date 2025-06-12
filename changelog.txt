@@ -1,4 +1,11 @@
 ---------------------------------------------------------------------------------------------------
+Version: 0.8.10
+
+  Changes:
+    - The refined concrete description will now reflect the cost to place it as a tile, as specified in settings.
+    - Space Age: Floating hardware now collides with lava. (Yes, it didn't before.)
+
+---------------------------------------------------------------------------------------------------
 Version: 0.8.9
 
   Changes:

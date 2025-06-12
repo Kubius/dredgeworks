@@ -17,7 +17,7 @@ for _, prototype in pairs(target_belts) do
     floating_belt.name = "floating-" .. prototype.name
     floating_belt.localised_name = {"dredgeworks.floated", prototype.localised_name or ({"entity-name." .. prototype.name})}
     floating_belt.minable = {mining_time = 0.1, result = "floating-" .. prototype.name}
-    floating_belt.collision_mask = {layers = {ground_tile = true,object = true,transport_belt = true}}
+    floating_belt.collision_mask = {layers = {ground_tile = true,object = true,transport_belt = true,lava_tile = true}}
     floating_belt.fast_replaceable_group = "floating-transport-belt"
     floating_belt.next_upgrade = nil
 

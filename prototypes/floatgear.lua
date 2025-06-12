@@ -6,7 +6,7 @@ wire_buoy.icon = DREDGEPATH .. "icons/wirebuoy.png"
 wire_buoy.icon_size = 64
 wire_buoy.icon_mipmaps = 0
 wire_buoy.minable = {mining_time = 0.3, result = "wire-buoy"}
-wire_buoy.collision_mask = {layers = {ground_tile = true,object = true}}
+wire_buoy.collision_mask = {layers = {ground_tile = true,object = true,lava_tile = true}}
 wire_buoy.maximum_wire_distance = 13
 wire_buoy.supply_area_distance = 5
 wire_buoy.fast_replaceable_group = nil
@@ -233,7 +233,7 @@ light_buoy.icon = DREDGEPATH .. "icons/lightbuoy.png"
 light_buoy.icon_size = 64
 light_buoy.icon_mipmaps = 0
 light_buoy.minable = {mining_time = 0.1, result = "light-buoy"}
-light_buoy.collision_mask = {layers = {ground_tile = true,object = true}}
+light_buoy.collision_mask = {layers = {ground_tile = true,object = true,lava_tile = true}}
 light_buoy.corpse = nil
 light_buoy.next_upgrade = nil
 light_buoy.light = {intensity = 0.8, size = 30, color = {r=1.0, g=0.9, b=0.7}}

@@ -29,7 +29,7 @@ if (target_list) then
       floating_inserter.name = "floating-" .. prototype.name
       floating_inserter.localised_name = {"dredgeworks.floated", prototype.localised_name or ({"entity-name." .. prototype.name})}
       floating_inserter.minable = {mining_time = 0.1, result = "floating-" .. prototype.name}
-      floating_inserter.collision_mask = {layers = {ground_tile = true,object = true}}
+      floating_inserter.collision_mask = {layers = {ground_tile = true,object = true,lava_tile = true}}
       if(prototype.fast_replaceable_group) then
         floating_inserter.fast_replaceable_group = "floating-" .. prototype.fast_replaceable_group
       end
