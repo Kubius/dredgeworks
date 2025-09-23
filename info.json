@@ -7,6 +7,7 @@
   "description": "Ore patches now spill over into the sea as submerged variants. Dredge them up with new floating hardware, and build deeper into the blue with water-placeable, removable refined concrete.",
   "dependencies": [
     "base >= 2.0.34",
+    "(?) space-age",
     "dredgeworks-graphics >= 0.1.1",
     "? cargo-ships",
     "? rso-mod",
