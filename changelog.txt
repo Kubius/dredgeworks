@@ -1,4 +1,10 @@
 ---------------------------------------------------------------------------------------------------
+Version: 0.8.11
+
+  Changes:
+    - Space Age: Crude oil ice generation (added to the base prototype by Aquilo) now collides with Nauvis' terrain.
+
+---------------------------------------------------------------------------------------------------
 Version: 0.8.10
 
   Changes:
