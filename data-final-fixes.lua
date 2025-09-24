@@ -63,6 +63,13 @@ for _,tile in pairs(tiles) do
     end
 end
 
+-- Stop crude oil generating with ice tiles under it on Nauvis when Space Age is active
+if mods["space-age"] then
+    data.raw.explosion["aquilo-tiles-inner-explosion"].created_effect.action_delivery.target_effects[1].tile_collision_mask.layers["shallow_resource"] = true
+    data.raw.explosion["aquilo-tiles-outer-explosion"].created_effect.action_delivery.target_effects[1].tile_collision_mask.layers["shallow_resource"] = true
+    data.raw.explosion["aquilo-tiles-outer-explosion"].created_effect.action_delivery.target_effects[2].tile_collision_mask.layers["shallow_resource"] = true
+end
+
 -- If we have Cargo Ships, we have offshore oil; remove the land deposits from water accordingly
 if mods["cargo-ships"] then
     local crude_mask = collision_mask_util.get_mask(data.raw.resource["crude-oil"])
