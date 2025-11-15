@@ -1,3 +1,20 @@
+data:extend{
+  {
+    type = "item-subgroup",
+    name = "belt-floating",
+    group = "logistics",
+    order = "b-a"
+  },
+  {
+    type = "item-subgroup",
+    name = "inserter-floating",
+    group = "logistics",
+    order = "c-a"
+  },
+}
+
+
+
 -- wire buoy: cable into brave new realms
 
 local wire_buoy = table.deepcopy(data.raw["electric-pole"]["big-electric-pole"])

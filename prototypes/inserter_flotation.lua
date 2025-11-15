@@ -27,6 +27,7 @@ if (target_list) then
     if inserter_eval(prototype) then
       local floating_inserter = table.deepcopy(prototype)
       floating_inserter.name = "floating-" .. prototype.name
+      floating_inserter.subgroup = "inserter-floating"
       floating_inserter.localised_name = {"dredgeworks.floated", prototype.localised_name or ({"entity-name." .. prototype.name})}
       floating_inserter.minable = {mining_time = 0.1, result = "floating-" .. prototype.name}
       floating_inserter.collision_mask = {layers = {ground_tile = true,object = true,lava_tile = true}}

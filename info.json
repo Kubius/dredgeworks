@@ -1,6 +1,6 @@
 {
   "name": "dredgeworks",
-  "version": "0.8.11",
+  "version": "0.8.12",
   "factorio_version": "2.0",
   "title": "Dredgeworks",
   "author": "Kubius",
@@ -11,6 +11,7 @@
     "dredgeworks-graphics >= 0.1.1",
     "? cargo-ships",
     "? rso-mod",
+    "? kry-inserters >= 5.1.11",
     "! Water_Ores"
   ]
 }

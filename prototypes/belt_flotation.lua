@@ -15,6 +15,7 @@ for _, prototype in pairs(target_belts) do
   if (prototype.minable) then
     local floating_belt = table.deepcopy(prototype)
     floating_belt.name = "floating-" .. prototype.name
+    floating_belt.subgroup = "belt-floating"
     floating_belt.localised_name = {"dredgeworks.floated", prototype.localised_name or ({"entity-name." .. prototype.name})}
     floating_belt.minable = {mining_time = 0.1, result = "floating-" .. prototype.name}
     floating_belt.collision_mask = {layers = {ground_tile = true,object = true,transport_belt = true,lava_tile = true}}

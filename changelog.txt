@@ -1,4 +1,11 @@
 ---------------------------------------------------------------------------------------------------
+Version: 0.8.12
+
+  Changes:
+    - Added More Long Inserters as an optional dependency to ensure its inserters are correctly detected by the flotation procedure.
+    - Floating belts and inserters have been moved into their own item subgroup for better organization.
+
+---------------------------------------------------------------------------------------------------
 Version: 0.8.11
 
   Changes:
