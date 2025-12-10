@@ -1,4 +1,11 @@
 ---------------------------------------------------------------------------------------------------
+Version: 0.8.13
+
+  Changes:
+    - Refactored special crude oil procedures (Cargo Ships and Space Age compatibility) to eliminate use of the "shallow_resource" collision layer.
+    - The "shallow_resource" collision layer has accordingly been removed, reducing Dredgeworks' collision layer usage from two to one.
+
+---------------------------------------------------------------------------------------------------
 Version: 0.8.12
 
   Changes:

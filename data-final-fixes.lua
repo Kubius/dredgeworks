@@ -49,8 +49,7 @@ data.raw.item["refined-hazard-concrete"].place_as_tile = {
     invert = true
 }
 
--- Remove main land resource filter, add a filter to manage special conditions for shallow resources we don't submerge
-data:extend({{type = "collision-layer", name = "shallow_resource"}})
+-- Remove resource collision mask from water tiles
 local tiles = {"deepwater","deepwater-green","water","water-green","water-mud","water-shallow","landfill","gleba-deep-lake","wetland-blue-slime"}
 for _,tile in pairs(tiles) do 
     local thistile = data.raw["tile"][tile]
@@ -58,23 +57,15 @@ for _,tile in pairs(tiles) do
         local mask = data.raw["tile"][tile].collision_mask.layers
         if mask["resource"] then
             mask["resource"] = nil
-            mask["shallow_resource"] = true
         end
     end
 end
 
--- Stop crude oil generating with ice tiles under it on Nauvis when Space Age is active
+-- Stop crude oil generating with ice tiles under it on regular ocean tiles (according to refcrete placement validity) when Space Age is active
 if mods["space-age"] then
-    data.raw.explosion["aquilo-tiles-inner-explosion"].created_effect.action_delivery.target_effects[1].tile_collision_mask.layers["shallow_resource"] = true
-    data.raw.explosion["aquilo-tiles-outer-explosion"].created_effect.action_delivery.target_effects[1].tile_collision_mask.layers["shallow_resource"] = true
-    data.raw.explosion["aquilo-tiles-outer-explosion"].created_effect.action_delivery.target_effects[2].tile_collision_mask.layers["shallow_resource"] = true
-end
-
--- If we have Cargo Ships, we have offshore oil; remove the land deposits from water accordingly
-if mods["cargo-ships"] then
-    local crude_mask = collision_mask_util.get_mask(data.raw.resource["crude-oil"])
-    crude_mask.layers["shallow_resource"] = true
-    data.raw.resource["crude-oil"].collision_mask = crude_mask
+    data.raw.explosion["aquilo-tiles-inner-explosion"].created_effect.action_delivery.target_effects[1].tile_collision_mask.layers["ref_concrete_valid"] = true
+    data.raw.explosion["aquilo-tiles-outer-explosion"].created_effect.action_delivery.target_effects[1].tile_collision_mask.layers["ref_concrete_valid"] = true
+    data.raw.explosion["aquilo-tiles-outer-explosion"].created_effect.action_delivery.target_effects[2].tile_collision_mask.layers["ref_concrete_valid"] = true
 end
 
 -- Optional: belt stacking for seafloor drills (not default due to it being kind of weird stacking heavy ores on floating belts)

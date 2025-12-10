@@ -19,7 +19,7 @@ function submergeOre(e)
                         if (surface.count_tiles_filtered{position=oldpos, radius=checkrad, collision_mask="ground_tile"} == 0 ) then
                             surface.create_entity{name=try_deep, amount=oldamt, position=oldpos}
                         end
-                    elseif((not allow_floating_edgecase) and (not mineprop or mineprop[1].type ~= "fluid")) then
+                    elseif((not allow_floating_edgecase) and (not mineprop or mineprop[1].type ~= "fluid") or (deposit.name == "crude-oil" and script.active_mods["cargo-ships"])) then
                         deposit.destroy()
                     end
                 else
