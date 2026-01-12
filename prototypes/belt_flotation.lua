@@ -20,7 +20,12 @@ for _, prototype in pairs(target_belts) do
     floating_belt.minable = {mining_time = 0.1, result = "floating-" .. prototype.name}
     floating_belt.collision_mask = {layers = {ground_tile = true,object = true,transport_belt = true,lava_tile = true}}
     floating_belt.fast_replaceable_group = "floating-transport-belt"
-    floating_belt.next_upgrade = nil
+    
+    if prototype.next_upgrade then
+      floating_belt.next_upgrade = "floating-" .. prototype.next_upgrade
+    else
+      floating_belt.next_upgrade = nil
+    end
 
     floating_belt.belt_animation_set.animation_set.tint = {175,200,190}
     floating_belt.belt_animation_set.animation_set.tint_as_overlay = true
