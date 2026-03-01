@@ -1,4 +1,10 @@
 ---------------------------------------------------------------------------------------------------
+Version: 0.8.15
+
+  Changes:
+    - The floating drill technology now unlocks the iron stick, in case it hasn't been attained from another technology.
+
+---------------------------------------------------------------------------------------------------
 Version: 0.8.14
 
   Changes:

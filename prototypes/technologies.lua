@@ -80,6 +80,7 @@ data:extend ({
     icon_size = 256,
     effects = {
       unlock("seafloor-drill"),
+      unlock("iron-stick"),
     },
     prerequisites = {"floating-logistics-technology", "steel-processing"},
     unit = {
