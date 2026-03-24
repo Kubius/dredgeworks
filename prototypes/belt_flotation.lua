@@ -12,7 +12,7 @@ else
 end
 
 for _, prototype in pairs(target_belts) do
-  if (prototype.minable) then
+  if (prototype.minable and not string.find(prototype.name, "dummy")) then
     local floating_belt = table.deepcopy(prototype)
     floating_belt.name = "floating-" .. prototype.name
     floating_belt.subgroup = "belt-floating"
@@ -21,10 +21,20 @@ for _, prototype in pairs(target_belts) do
     floating_belt.collision_mask = {layers = {ground_tile = true,object = true,transport_belt = true,lava_tile = true}}
     floating_belt.fast_replaceable_group = "floating-transport-belt"
     
-    if prototype.next_upgrade then
-      floating_belt.next_upgrade = "floating-" .. prototype.next_upgrade
+    if settings.startup["limit_belt_flotation"].value == false then
+      if prototype.next_upgrade then
+        floating_belt.next_upgrade = "floating-" .. prototype.next_upgrade
+      else
+        floating_belt.next_upgrade = nil
+      end
     else
-      floating_belt.next_upgrade = nil
+      if floating_belt.name == "floating-transport-belt" then
+        floating_belt.next_upgrade = "floating-fast-transport-belt"
+      elseif floating_belt.name == "floating-fast-transport-belt" then
+        floating_belt.next_upgrade = "floating-express-transport-belt"
+      elseif floating_belt.name == "floating-express-transport-belt" then
+        floating_belt.next_upgrade = nil
+      end
     end
 
     floating_belt.belt_animation_set.animation_set.tint = {175,200,190}

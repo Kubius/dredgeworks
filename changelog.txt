@@ -1,4 +1,11 @@
 ---------------------------------------------------------------------------------------------------
+Version: 0.8.16
+
+  Changes:
+    - Exempt belt objects with "dummy" in their name from flotation (fixes Belt Draw compatibility).
+    - Upgrade progression of floating belts now uses a hardcoded manual configuration if the option to limit belt flotation is active.
+
+---------------------------------------------------------------------------------------------------
 Version: 0.8.15
 
   Changes:
